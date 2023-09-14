@@ -1,67 +1,38 @@
-<!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Главная - Резюме ИИ</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="../../../static/assets/logo/logo.png" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../../../static/css/styles.css" rel="stylesheet" />
-        <link href="../../../static/css/own-style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!"> <img src="../../../static/assets/logo/logo.png" alt="" width="30" height="30"> Resume Assistant</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Создать Резюме</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Создать Спр. Письмо</a></li>
-                    </ul>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+        <section class="jumbotron bg-light">
+            <div class="container carousel-container">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" class="active" data-bs-slide-to="0" aria-label="Университет искусственного интеллекта"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Создать резюме с помощью ИИ"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Создать сопроводительное письмо с помощью ИИ"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <h1 class="carousel-style">Университет Искусственного Интеллекта</h1>
+                        <img src="{% static 'assets/baner/1.jpg' %}" class="d-block w-100" height="550" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <h1 class="carousel-style">Создать качествоное резюме с помощью Искусственного Интеллекта!</h1>
+                        <img src="{% static 'assets/baner/2.jpg' %}" class="d-block w-100" height="550" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <h1 class="carousel-style">Создать качествоное сопроводительное письмо с помощью Искусственного Интеллекта!</h1>
+                        <img src="{% static 'assets/baner/3.jpg' %}" class="d-block w-100" height="550" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
-        </nav>
-
-        <section class="jumbotron bg-light" >
-          <div class="container carousel-container">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" class="active" data-bs-slide-to="0" aria-label="Университет искусственного интеллекта"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Создать резюме с помощью ИИ"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Создать сопроводительное письмо с помощью ИИ"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <h1 class="carousel-style">Университет Искусственного Интеллекта</h1>
-                    <img src="../../../static/assets/baner/1.jpg" class="d-block w-100" height="550" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <h1 class="carousel-style">Создать качествоное резюме с помощью Искусственного Интеллекта!</h1>
-                    <img src="../../../static/assets/baner/2.jpg" class="d-block w-100" height="550" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <h1 class="carousel-style">Создать качествоное сопроводительное письмо с помощью Искусственного Интеллекта!</h1>
-                    <img src="../../../static/assets/baner/3.jpg" class="d-block w-100" height="550" alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-          </div>
         </section>
         <!-- Creat resume Section-->
         <section class="jumbotron bg-white">
@@ -69,12 +40,12 @@
             <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="../../../static/assets/sign.jpg" class="img-fluid rounded-start w-100" style="height: 200px;" alt="...">
+                  <img src="{% static 'assets/sign.jpg' %}" class="img-fluid rounded-start w-100" style="height: 200px;" alt="...">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
                     <h5 class="card-title">Добро пожаловать на наш сайт!</h5>
-                    <p class="card-text">Если вы впервые здесь, предлагаем вам <a href="#"> Войти</a> или <a href="#">Зарегистрироваться</a>, чтобы начать пользоваться всеми возможностями сайта.</p>
+                    <p class="card-text">Если вы впервые здесь, предлагаем вам <a href="{% url 'appweb:login_view' %}"> Войти</a> или <a href="{% url 'appweb:registration_view' %}">Зарегистрироваться</a>, чтобы начать пользоваться всеми возможностями сайта.</p>
                     <p class="card-text"></p>
                   </div>
                 </div>
@@ -83,16 +54,4 @@
 
           </div>
         </section>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="../../../static/js/scripts.js"></script>
-    </body>
-</html>
+{% endblock %}

@@ -17,20 +17,21 @@ Including another URLconf
 
 from appweb import views
 from django.urls import path, include
+#from django.contrib import admin
 #from .views import *
 
 app_name = 'appweb'
 
 urlpatterns = [
-                path('', views.main_view),                       #, name='main_view'),
-                path('index/', views.index), #, name='index'),
-                path('cv_view/', views.cv_view), #, name='cv_view'),
-                path('dashboard_view/', views.dashboard_view), #, name='dashboard_view'),
-                path('edit_cv_view/', views.edit_cv_view) ,#, name='edit_cv_view'),
-                path('edit_cv_order_view/', views.edit_cv_order_view), #, name='edit_cv_order_view'),
-                path('edit_liter_view/', views.edit_liter_view), #, name='edit_liter_view'),
-                path('edit_liter_order_view/', views.edit_liter_order_view), #, name='edit_liter_order_view'),
-                path('liter_view/', views.liter_view), #, name='liter_view'),
-                path('login_view/', views.login_view),#, name='login_view'),
-                path('registration_view/', views.registration_view) #, name='registration_view'),
+                path('test/', views.test_view), #, name='index'),
+                path('', views.index, name='index'),
+                path('cv_view/', views.cv_view, name='cv_view'),
+                path('dashboard_view/', views.dashboard_view, name='dashboard_view'),
+                path('edit_cv_view/', views.edit_cv_view, name='edit_cv_view'),
+                path('edit_cv_order_view/', views.edit_cv_order_view, name='edit_cv_order_view'),
+                path('edit_litter_view/', views.edit_litter_view, name='edit_litter_view'),
+                path('edit_litter_order_view/', views.edit_litter_order_view, name='edit_litter_order_view'),
+                path('litter_view/', views.litter_view, name='litter_view'),
+                path('login_view/', views.login_view, name='login_view'),
+                path('registration_view/', views.registration_view, name='registration_view'),
             ]

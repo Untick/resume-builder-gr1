@@ -25,11 +25,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'appweb.apps.AppwebConfig',   # !!!!
+    'appweb.apps.AppwebConfig',     # !!!! WebSite
     'do_CL.apps.DoClConfig',        # !!!!
     'do_CV.apps.DoCvConfig',        # !!!!
     'do_order.apps.DoOrderConfig',  # !!!!
-    'static',                       # !!!!
+    'chatGPT.apps.ChatgptConfig',   # !!!! ChatGPT
+    'users.apps.UsersConfig',       # !!!! Student
+    'static',                       # !!!! static for Base.html
 ]
 
 MIDDLEWARE = [
@@ -47,7 +49,7 @@ ROOT_URLCONF = 'CV_maker_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],          # указывается нестандартная директория
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,8 +110,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = '/static/'
+#STATIC_ROOT = BASE_DIR / 'static' #os.path.join(BASE_DIR, 'static')  # !!! эти настройки не работают, нужно использовать STATICFILES_DIRS
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]   # для загрузки static указывается нестандартная директория
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
