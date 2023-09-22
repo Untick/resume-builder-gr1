@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+        <section class="jumbotron bg-light">
+            <div class="container carousel-container">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" class="active" data-bs-slide-to="0" aria-label="Университет искусственного интеллекта"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Создать резюме с помощью ИИ"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Создать сопроводительное письмо с помощью ИИ"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <h1 class="carousel-style">Университет Искусственного Интеллекта</h1>
+                        <img src="{% static 'assets/baner/1.jpg' %}" class="d-block w-100" height="550" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <h1 class="carousel-style">Создать качественное резюме с помощью Искусственного Интеллекта!</h1>
+                        <img src="{% static 'assets/baner/2.jpg' %}" class="d-block w-100" height="550" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <h1 class="carousel-style">Создать качественное сопроводительное письмо с помощью Искусственного Интеллекта!</h1>
+                        <img src="{% static 'assets/baner/3.jpg' %}" class="d-block w-100" height="550" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Creat resume Section-->
+        <section class="jumbotron bg-white">
+          <div class="container" style="padding-top: 15px; ;">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{% static 'assets/sign.jpg' %}" class="img-fluid rounded-start w-100" style="height: 200px;" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Добро пожаловать на наш сайт!</h5>
+                    <p class="card-text">Если вы впервые здесь, предлагаем вам <a href="{% url 'appweb:login_view' %}"> Войти</a> или <a href="{% url 'appweb:registration_view' %}">Зарегистрироваться</a>, чтобы начать пользоваться всеми возможностями сайта.</p>
+                    <p class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+{% endblock %}

@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Forms-->
+    <div class="container mt-5" style="padding: 50px 0 100px 0;">
+        <div class="row">
+            <!-- Первая форма -->
+            <div class="col-md-6">
+                <h2>Резюме</h2>
+                <form id="resume-form">
+                    <div class="form-group mb-3">
+                        <label for="fullname">ФИО</label>
+                        <input type="text" class="form-control" id="fullname" placeholder="Введите ФИО">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="gender">Пол</label>
+                        <select class="form-control" id="gender">
+                            <option value="Мужской">Мужской</option>
+                            <option value="Женский">Женский</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="age">Возраст</label>
+                        <input type="number" class="form-control" id="age">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="salary">Зарплата</label>
+                        <input type="text" class="form-control" id="salary" placeholder="Введите зарплату">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="position_sought">Желаемая должность</label>
+                        <input type="text" class="form-control" id="position_sought"
+                            placeholder="Введите желаемую должность">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="city">Город</label>
+                        <input type="text" class="form-control" id="city" placeholder="Введите город">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="schedule">График работы</label>
+                        <input type="text" class="form-control" id="schedule" placeholder="Введите график работы">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="experience_level">Уровень опыта</label>
+                        <select class="form-control" id="experience_level">
+                            <option value="Начинающий">Начинающий</option>
+                            <option value="Средний">Средний</option>
+                            <option value="Продвинутый">Продвинутый</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="last_job">Последнее место работы</label>
+                        <input type="text" class="form-control" id="last_job"
+                            placeholder="Введите последнее место работы">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="last_position">Должность на последнем месте работы</label>
+                        <input type="text" class="form-control" id="last_position"
+                            placeholder="Введите должность на последнем месте работы">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="tasks_at_previous_jobs">Обязанности на предыдущих местах работы</label>
+                        <textarea class="form-control" id="tasks_at_previous_jobs" rows="4"
+                            placeholder="Введите обязанности на предыдущих местах работы"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="about_me">О себе</label>
+                        <textarea class="form-control" id="about_me" rows="4"
+                            placeholder="Расскажите о себе"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="key_skills">Ключевые навыки</label>
+                        <textarea class="form-control" id="key_skills" rows="4"
+                            placeholder="Введите ключевые навыки"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="education_university">Учебное заведение</label>
+                        <input type="text" class="form-control" id="education_university"
+                            placeholder="Введите учебное заведение">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="image">Фотография</label>
+                        <input type="file" class="form-control-file" id="image">
+                    </div>
+                    <!-- Button trigger modal -->
+                    <button type="submit" class="btn btn-info m-3">Генирировать</button>
+                </form>
+            </div>
+            <!-- Вторая форма -->
+            <div class="col-md-6">
+                <h2>Предпросмотр</h2>
+                <form id="preview-form">
+                    <div class="form-group mb-3">
+                        <label for="preview_fullname">ФИО</label>
+                        <input type="text" class="form-control" id="preview_fullname" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_gender">Пол</label>
+                        <input type="text" class="form-control" id="preview_gender" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_age">Возраст</label>
+                        <input type="text" class="form-control" id="preview_age" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_salary">Зарплата</label>
+                        <input type="text" class="form-control" id="preview_salary" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_position_sought">Желаемая должность</label>
+                        <input type="text" class="form-control" id="preview_position_sought" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_city">Город</label>
+                        <input type="text" class="form-control" id="preview_city" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_schedule">График работы</label>
+                        <input type="text" class="form-control" id="preview_schedule" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_experience_level">Уровень опыта</label>
+                        <input type="text" class="form-control" id="preview_experience_level" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_last_job">Последнее место работы</label>
+                        <input type="text" class="form-control" id="preview_last_job" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_last_position">Должность на последнем месте работы</label>
+                        <input type="text" class="form-control" id="preview_last_position" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_tasks_at_previous_jobs">Обязанности на предыдущих местах работы</label>
+                        <textarea class="form-control" id="preview_tasks_at_previous_jobs" rows="4" disabled></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_about_me">О себе</label>
+                        <textarea class="form-control" id="preview_about_me" rows="4" disabled></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_key_skills">Ключевые навыки</label>
+                        <textarea class="form-control" id="preview_key_skills" rows="4" disabled></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="preview_education_university">Учебное заведение</label>
+                        <input type="text" class="form-control" id="preview_education_university" disabled>
+                    </div>
+                    <button type="submit" class="btn btn-success m-3">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const resumeForm = document.getElementById('resume-form');
+            const previewForm = document.getElementById('preview-form');
+    
+            // Получаем список полей в первой и второй формах
+            const resumeFields = resumeForm.querySelectorAll('input, select, textarea');
+            const previewFields = previewForm.querySelectorAll('input, select, textarea');
+    
+            // Добавляем обработчик события input для каждого поля первой формы
+            resumeFields.forEach(function (field) {
+                field.addEventListener('input', function () {
+                    const fieldName = field.getAttribute('id');
+                    const previewField = document.getElementById('preview_' + fieldName);
+    
+                    if (previewField) {
+                        previewField.value = field.value;
+                    }
+                });
+            });
+    
+            // Обработчик события отправки второй формы
+            previewForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+    
+                // Здесь также можете добавить код для сохранения данных, если это необходимо
+            });
+        });
+    </script>
+{% endblock %}
