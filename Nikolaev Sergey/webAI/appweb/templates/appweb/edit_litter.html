@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- Product section-->
+{% block content %}
+
+<div class="container mt-5" style="padding: 50px 0 100px 0;">
+    <div class="form-group mb-3">
+        <label for="vacancy_url">Введите ссылку на вакансию</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="vacancy_url" placeholder="https://....">
+            </div>
+    </div>
+    <div class="bd-example-snippet bd-code-snippet"><div class="bd-example m-0 border-0">
+    <form class="row g-3">
+        <div class="col-md-4">
+            <div class="form-group mb-3">
+                <label for="contact_name">Проверьте контактное лицо</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="contact_name" placeholder="Имя контактного лица">
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label for="vacancy_name">Проверьте название вакансии</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="vacancy_name" placeholder="Название вакансии">
+                    </div>
+            </div>
+        </div>
+    </div></div>
+    </form>
+    <div class="col-md-2">
+        <button class="btn btn-primary" type="submit" id="cover_letter_gen">Генерировать</button>
+     </div>
+    </br>
+    <p class="h1" for="cover_letter_draft">Сопроводительное письмо</p>
+    <textarea class="form-control" id="cover_letter_draft" rows="8" placeholder="Сопроводительное письмо"></textarea>
+</div>
+
+{% endblock %}

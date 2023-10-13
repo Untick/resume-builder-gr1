@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Forms-->
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="container mt-5" style="padding: 50px 0 100px 0;">
+        <div class="row">
+            <!-- Первая форма -->
+            <div class="col-md-6">
+                <h2>Резюме</h2>
+                <form id="resume-form">
+                    <div class="form-group mb-3">
+                        <label for="fullname">ФИО</label>
+                        <input type="text" class="form-control" id="fullname" placeholder="Введите ФИО" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="image">Фотография</label>
+                        <input type="file" class="form-control-file" id="image">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Пол</label> </br>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender-male" value="option1">
+                          <label class="form-check-label" for="gender-male">Мужской</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender-female" value="option2">
+                          <label class="form-check-label" for="gender-female">Женский</label>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="age">Возраст</label>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="age" min="18" max="100" required>
+                            <span class="input-group-text" id="age-text">лет</span>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="city">Город</label>
+                        <input type="text" class="form-control" id="city" placeholder="Введите город" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="education_university">Учебное заведение</label>
+                        <input type="text" class="form-control" id="education_university"
+                            placeholder="Введите учебное заведение">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="salary">Желаемая зарплата</label>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="salary" min="10" max="1000" value="100" step="5" placeholder="Введите зарплату" required>
+                            <span class="input-group-text" id="roubles">тыс. руб.</span>
+                        </div>                        
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="position_sought">Желаемая должность</label>
+                        <input type="text" class="form-control" id="position_sought"
+                            placeholder="Введите желаемую должность" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>График работы</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="fulltime">
+                            <label class="form-check-label" for="fulltime">Полный день</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="parttime">
+                            <label class="form-check-label" for="parttime">Частичная занятость</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="remote">
+                            <label class="form-check-label" for="remote">Удалённая работа</label>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="experience_level">Уровень опыта</label>
+                        <select class="form-control" id="experience_level">
+                            <option value="Начинающий">Начинающий</option>
+                            <option value="Средний">Средний</option>
+                            <option value="Продвинутый">Продвинутый</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="last_job">Последнее место работы</label>
+                        <input type="text" class="form-control" id="last_job"
+                            placeholder="Введите последнее место работы">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="last_position">Должность на последнем месте работы</label>
+                        <input type="text" class="form-control" id="last_position"
+                            placeholder="Введите должность на последнем месте работы">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="tasks_at_previous_jobs">Обязанности на предыдущих местах работы</label>
+                        <textarea class="form-control" id="tasks_at_previous_jobs" rows="4"
+                            placeholder="Введите обязанности на предыдущих местах работы"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="about_me">О себе</label>
+                        <textarea class="form-control" id="about_me" rows="4"
+                            placeholder="Расскажите о себе"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="key_skills">Ключевые навыки</label>
+                        <textarea class="form-control" id="key_skills" rows="4"
+                            placeholder="Введите ключевые навыки"></textarea>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <button type="submit" class="btn btn-info m-3">Генерировать</button>
+                </form>
+            </div>
+            <!-- Вторая форма -->
+            <div class="col-md-6">
+                <h2>Предпросмотр</h2>
+                <form id="preview--form">
+                    <div class="form-group mb-3">
+                        <label for="fullname">ФИО</label>
+                        <input type="text" class="form-control" id="preview_fullname" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="image">Фотография</label>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Пол</label> </br>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preview_gender-male" value="option1"  disabled>
+                          <label class="form-check-label" for="gender-male">Мужской</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="preview_gender-female" value="option2"  disabled>
+                          <label class="form-check-label" for="gender-female">Женский</label>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="age">Возраст</label>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="preview_age" min="18" max="100" disabled>
+                            <span class="input-group-text" id="preview_age-text">лет</span>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="city">Город</label>
+                        <input type="text" class="form-control" id="preview_city" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="education_university">Учебное заведение</label>
+                        <input type="text" class="form-control" id="preview_education_university" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="salary">Желаемая зарплата</label>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="preview_salary" disabled>
+                            <span class="input-group-text" id="preview_roubles">тыс. руб.</span>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="position_sought">Желаемая должность</label>
+                        <input type="text" class="form-control" id="preview_position_sought" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>График работы</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="preview_fulltime" disabled>
+                            <label class="form-check-label" for="fulltime">Полный день</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="preview_parttime" disabled>
+                            <label class="form-check-label" for="parttime">Частичная занятость</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="preview_remote" disabled>
+                            <label class="form-check-label" for="remote">Удалённая работа</label>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="experience_level">Уровень опыта</label>
+                        <select class="form-control" id="preview_experience_level" disabled>
+                            <option value="Начинающий">Начинающий</option>
+                            <option value="Средний">Средний</option>
+                            <option value="Продвинутый">Продвинутый</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="last_job">Последнее место работы</label>
+                        <input type="text" class="form-control" id="preview_last_job"  disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="last_position">Должность на последнем месте работы</label>
+                        <input type="text" class="form-control" id="preview_last_position" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="tasks_at_previous_jobs">Обязанности на предыдущих местах работы</label>
+                        <textarea class="form-control" id="preview_tasks_at_previous_jobs" rows="4" disabled></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="about_me">О себе</label>
+                        <textarea class="form-control" id="preview_about_me" rows="4" disabled></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="key_skills">Ключевые навыки</label>
+                        <textarea class="form-control" id="preview_key_skills" rows="4" disabled></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success m-3">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
