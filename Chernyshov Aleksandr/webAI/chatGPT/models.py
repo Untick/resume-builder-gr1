@@ -4,8 +4,7 @@ import getpass
 import openai
 import tiktoken
 
-#openai_key = getpass.getpass("OpenAI API Key:")
-openai_key = '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'
+openai_key = getpass.getpass("OpenAI API Key:")
 os.environ["OPENAI_API_KEY"] = openai_key
 openai.api_key = openai_key
 
