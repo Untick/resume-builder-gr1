@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'chatGPT.apps.ChatgptConfig',   # !!!! ChatGPT
     'users.apps.UsersConfig',       # !!!! Student
     'static',                       # !!!! static for Base.html
+    'app_promt.apps.app_promtConfig',
 ]
 
 MIDDLEWARE = [

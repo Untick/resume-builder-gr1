@@ -146,9 +146,59 @@
                         <label for="preview_education_university">Учебное заведение</label>
                         <input type="text" class="form-control" id="preview_education_university" disabled>
                     </div>
-                    <button type="submit" class="btn btn-success m-3">Сохранить</button>
+                    <button type="button" onclick="displayInput()" class="btn btn-success m-3">Сохранить</button>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        function displayInput() {
+            var fullname = document.getElementById("fullname").value;
+            var preview_fullname = document.getElementById("preview_fullname");
+            preview_fullname.innerHTML = fullname; <!--+ "<br>"; -->
+            var gender = document.getElementById("gender").value;
+            var preview_gender = document.getElementById("preview_gender");
+            preview_gender.innerHTML = gender;
+            var age = document.getElementById("age").value;
+            var preview_age = document.getElementById("preview_age");
+            preview_age.innerHTML = age;
+            var salary = document.getElementById("salary").value;
+            var preview_salary = document.getElementById("preview_salary");
+            preview_salary.innerHTML = salary;
+            var position_sought = document.getElementById("position_sought").value;
+            var preview_position_sought = document.getElementById("preview_position_sought");
+            preview_position_sought.innerHTML = position_sought;
+            var city = document.getElementById("city").value;
+            var preview_city = document.getElementById("preview_city");
+            preview_city.innerHTML = city;
+            var schedule = document.getElementById("schedule").value;
+            var preview_schedule = document.getElementById("preview_schedule");
+            preview_schedule.innerHTML = schedule;
+            var experience_level = document.getElementById("experience_level").value;
+            var preview_experience_level = document.getElementById("preview_experience_level");
+            preview_experience_level.innerHTML = experience_level;
+            var last_job = document.getElementById("last_job").value;
+            var preview_last_job = document.getElementById("preview_last_job");
+            preview_last_job.innerHTML = last_job;
+            var last_position = document.getElementById("last_position").value;
+            var preview_last_position = document.getElementById("preview_last_position");
+            preview_last_position.innerHTML = last_position;
+            var tasks_at_previous_jobs = document.getElementById("tasks_at_previous_jobs").value;
+            var preview_tasks_at_previous_jobs = document.getElementById("preview_tasks_at_previous_jobs");
+            preview_tasks_at_previous_jobs.innerHTML = tasks_at_previous_jobs;
+            var about_me = document.getElementById("about_me").value;
+            var preview_about_me = document.getElementById("preview_about_me");
+            preview_about_me.innerHTML = about_me;
+            var key_skills = document.getElementById("key_skills").value;
+            var preview_key_skills = document.getElementById("preview_key_skills");
+            preview_key_skills.innerHTML = key_skills;
+            var education_university = document.getElementById("education_university").value;
+            var preview_education_university = document.getElementById("preview_education_university");
+            preview_education_university.innerHTML = education_university;
+            var image = document.getElementById("image").value;
+            var preview_image = document.getElementById("preview_image");
+            preview_image.innerHTML = image;
+        }
+    </script>
 {% endblock %}
+

@@ -17,12 +17,13 @@ Including another URLconf
 
 from appweb import views
 from django.urls import path, include
-#from django.contrib import admin
+from django.contrib import admin
 #from .views import *
 
 app_name = 'appweb'
 
 urlpatterns = [
+                #path("admin/", admin.site.urls),
                 path('test/', views.test_view), #, name='index'),
                 path('', views.index, name='index'),
                 path('cv_view/', views.cv_view, name='cv_view'),
@@ -34,4 +35,7 @@ urlpatterns = [
                 path('litter_view/', views.litter_view, name='litter_view'),
                 path('login_view/', views.login_view, name='login_view'),
                 path('registration_view/', views.registration_view, name='registration_view'),
+                path('promt_view/', views.promt_view, name='promt_view'),
+                path('post/<int:id>/', views.post, name='post'),
+                path('create_post/', views.create_post, name='create_post'),
             ]

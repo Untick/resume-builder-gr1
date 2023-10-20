@@ -4,7 +4,6 @@ from django.contrib import messages
 from .forms import OrderCVForm
 from django.views import View
 
-
 class OrderCVCreateView(View):
     template_name = "order_cv_form.html"
 
@@ -20,7 +19,6 @@ class OrderCVCreateView(View):
             return redirect("success_page")
         context = {"form": form}
         return render(request, self.template_name, context)
-
 
 class OrderCVUpdateView(View):
     template_name = "order_cv_form.html"
