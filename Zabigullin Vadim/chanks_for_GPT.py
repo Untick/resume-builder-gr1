@@ -1,9 +1,9 @@
 # @title Установка пакетов
 from IPython.display import clear_output
 
-#!pip install --upgrade tiktoken
-#!pip install langchain openai
-#!pip install faiss-cpu
+# pip install --upgrade tiktoken
+# pip install langchain openai
+# pip install faiss-cpu
 
 clear_output()
 
