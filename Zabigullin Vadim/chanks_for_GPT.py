@@ -5,8 +5,6 @@ from IPython.display import clear_output
 # pip install langchain openai
 # pip install faiss-cpu
 
-clear_output()
-
 import getpass
 import openai
 import os
@@ -41,8 +39,6 @@ MODEL_GPT4_1106 = "gpt-4-1106-preview"
 # размер чанка, оптимально для Опыта работы - 1024, Обо мне - 2048
 chunk_size_we = 1024
 chunk_size_am = 2048
-
-clear_output()
 
 class WorkerОpenAI():
   def __init__(self, \
@@ -182,7 +178,6 @@ class WorkerОpenAI():
 
     print('\nЦЕНА запроса создания базы индексов для пункта "Обо мне":', 0.0004 * (count_tokens / 1000), ' $')
 
-clear_output()
 
 # загрузим файл со всеми инструкциями от HR отдела
 import gdown
