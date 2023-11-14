@@ -191,7 +191,7 @@ import gdown
 # файл 'merged_resume.txt' доступен по ссылке:  https://drive.google.com/file/d/105lVzXUxliTGU_xgOAL4cz_tqVkNfnOb/view?usp=sharing
 file_url = 'https://drive.google.com/uc?id=105lVzXUxliTGU_xgOAL4cz_tqVkNfnOb'
 
-# Путь для сохранения файла в корневой папке Google Colab
+# Путь для сохранения файла в корневой папке
 output_path = '/content/'  # Можете изменить путь, если нужно сохранить файл в другой папке
 
 # Загрузите файл
